@@ -1,0 +1,43 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NDkxOTU3NCwianRpIjoiMDc5YjBkMWEtYTEyYS00MzRiLTkxY2YtM2U0MGMwZjNhZmE5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjk0OTE5NTc0LCJleHAiOjE2OTQ5MjA0NzR9.eoFWtkKCvDPKzB6JP_X3YHyJJJFyQoSGd4c88qS9k8g
+
+### Crear un nuevo restaurante
+
+POST http://localhost:5000/restaurante
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nombre": "Restaurante Prueba 1",
+  "direccion": "123 Calle Principal",
+  "telefono": "+1234567890",
+  "redes_sociales": "https://facebook.com/restauranteprueba",
+  "horarios_abre": "Lunes a Viernes: 8AM-10PM, Sábados: 9AM-11PM, Domingos: 10AM-9PM",
+  "tipo_comida": "Mexicana",
+  "aplicaciones_asociadas": "Uber Eats, Rappi",
+  "opciones_servicio": "Dine-in, Takeaway"
+}
+
+
+### Editar un restaurante existente
+
+PUT http://localhost:5000/restaurante/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nombre": "Restaurante Prueba Editado",
+  "direccion": "456 Calle Secundaria",
+  "telefono": "+0987654321",
+  "redes_sociales": "https://twitter.com/restauranteeditado",
+  "horarios_abre": "Lunes a Viernes: 9AM-11PM, Sábados: 10AM-12AM, Domingos: 11AM-10PM",
+  "tipo_comida": "Italiana",
+  "aplicaciones_asociadas": "Didi Food, Glovo",
+  "opciones_servicio": "Dine-in, Delivery"
+}
+
+
+### Obtener restaurante por id
+
+GET http://localhost:5000/restaurante/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
