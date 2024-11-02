@@ -335,6 +335,12 @@ class VistaReceta(Resource):
         db.session.delete(receta)
         db.session.commit()
         return "", 204
+    
+    def pruebaqualitygate(self, id_receta):
+        receta = Receta.query.get_or_404(id_receta)
+        db.session.delete(receta)
+        db.session.commit()
+        return "", 204
 
     def borrar_ingrediente_util(self, receta_ingredientes, receta_ingrediente):
         borrar = True
