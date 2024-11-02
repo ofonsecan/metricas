@@ -66,6 +66,12 @@ class VistaSignIn(Resource):
         usuario.contrasena = request.json.get("contrasena", usuario.contrasena)
         db.session.commit()
         return usuario_schema.dump(usuario)
+    
+    def pruebacoverage(self, id_usuario):
+        usuario = Usuario.query.get_or_404(id_usuario)
+        usuario.contrasena = request.json.get("contrasena", usuario.contrasena)
+        db.session.commit()
+        return usuario_schema.dump(usuario)
 
     def delete(self, id_usuario):
         usuario = Administrador.query.get_or_404(id_usuario)
